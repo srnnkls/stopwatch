@@ -34,16 +34,16 @@ export const Stopwatch = () => {
   useEffect(() => {
     // Define the message event handler
     const handleMessage = (event: MessageEvent) => {
-      if (event.origin === 'https://notion.so') {
+      if (event.origin === "https://www.notion.so") {
         const dispatchType = event.data; // Assuming the message data is a string
-        dispatch({type: dispatchType})
+        dispatch({ type: dispatchType });
       }
     };
 
-    window.addEventListener('message', handleMessage);
+    window.addEventListener("message", handleMessage);
 
     return () => {
-      window.removeEventListener('message', handleMessage);
+      window.removeEventListener("message", handleMessage);
     };
   }, [dispatch]);
 
