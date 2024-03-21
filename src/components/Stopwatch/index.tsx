@@ -31,6 +31,22 @@ export const Stopwatch = () => {
     }
   }, [dispatch, id]);
 
+  useEffect(() => {
+    // Define the message event handler
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin === 'https://notion.so') {
+        const dispatchType = event.data; // Assuming the message data is a string
+        dispatch({type: dispatchType})
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+
+    return () => {
+      window.removeEventListener('message', handleMessage);
+    };
+  }, []);
+  
   useIcon({
     href: started ? PlayingIcon : PausedIcon,
   });
