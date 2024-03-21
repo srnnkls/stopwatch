@@ -5,15 +5,6 @@ import "src/style/global.css";
 
 import App from "src/components/App";
 
-const handleMessage = (event: MessageEvent) => {
-  if (event.origin === "https://notion.so") {
-    console.log("Received message:", event.data);
-  }
-  console.log("Not trusted!");
-};
-
-window.addEventListener("message", handleMessage);
-
 ReactDOM.render(
   <StrictMode>
     <App />
