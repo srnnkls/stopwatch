@@ -45,8 +45,8 @@ export const Stopwatch = () => {
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, []);
-  
+  }, [dispatch]);
+
   useIcon({
     href: started ? PlayingIcon : PausedIcon,
   });
