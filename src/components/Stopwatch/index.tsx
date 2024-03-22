@@ -33,7 +33,7 @@ export const Stopwatch = () => {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (event.origin === "https://dailystopwatch.netlify.app") {
+      if (event.origin === "https://master--dailystopwatch.netlify.app") {
         const dispatchType = event.data; // Assuming the message data is a string
         dispatch({ type: dispatchType });
       }
